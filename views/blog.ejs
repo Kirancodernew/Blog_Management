@@ -1,0 +1,34 @@
+<%- include('./Layouts/header.ejs') %>
+    <!-- Page Content-->
+    <div class="container px-4 px-lg-5">
+        <!-- Heading Row-->
+        <% if(posts.length >0){%>
+            <% posts.forEach(post=>{ %>
+                <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                    <div class="col-lg-7">
+                        <%if(post.image!==undefined && post.image!==''){
+                            %>
+                            <img class="img-fluid rounded mb-4 mb-lg-0" src=" <%= post.image %>" alt="..." /></div>
+                            <%
+                        }else{
+                            %>
+                            <img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+
+                            <%
+                        }
+
+                         %>
+                        
+                    <div class="col-lg-5">
+                        <h1 class="font-weight-light"><%= post.title %></</h1>
+                        <p><%= post.content %></p>
+                        <a class="btn btn-primary" href="/blog/<%=post._id%>">Read More</a>
+                    </div>
+                </div>
+            <% })%>
+        <% } else{ %>
+            <h2>Post not available!</h2>
+        <% } %>
+
+    </div>
+<%- include('./Layouts/footer.ejs') %>
