@@ -13,7 +13,7 @@ app.set('views','./views');
 mongoose.connect('mongodb+srv://saikiranbheempur:saikiranrathod@rathodtest.txfrhmk.mongodb.net/BlogProject?retryWrites=true&w=majority')
     .then((result)=>{
         app.listen(3000)
-        console.log('ready to listen to response');
+        console.log('ready to listen to response!');
     })
     .catch((err)=>{
         console.log(err);
