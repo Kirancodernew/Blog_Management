@@ -8,14 +8,9 @@ const userController =require('../controllers/userController');
 const session = require('express-session');
 const config = require('../config/config');
 userRoute.use(session(
-    {   cookie:{
-        secure: true,
-        maxAge:60000
-           },
-        store: new RedisStore(),
-        secret: config.sessionSecret,
-        saveUninitialized: true,
-        resave: false
+    {   secret:config.sessionSecret,
+        resave: true,
+        saveUninitialized:true
     })
 );
 
